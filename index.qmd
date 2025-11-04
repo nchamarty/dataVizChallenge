@@ -272,7 +272,7 @@ comparison_data = pd.merge(
 )
 
 # Create a two-facet visualization using subplot layout
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6), layout='constrained')
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5), layout='constrained')
 
 # Sort data for better visualization
 avgDF_2010_sorted = avgDF_2010.sort_values('totalRuns', ascending=True)
@@ -289,8 +289,8 @@ bars_2010 = ax1.barh(avgDF_2010_sorted.home, avgDF_2010_sorted.totalRuns,
                      color=colorado_colors_2010)
 #ax1.set_title("2010 Season: Average Runs Per Game by Stadium", 
 #              fontsize=14, fontweight='bold', pad=15)
-ax1.set_xlabel("Average Runs Per Game", fontsize=12)
-ax1.set_ylabel("Stadium (Home Team)", fontsize=12)
+ax1.set_xlabel("Average Runs Per Game", fontsize=8)
+ax1.set_ylabel("Stadium (Home Team)", fontsize=8)
 ax1.grid(True, alpha=0.3)
 
 # Add annotation for Colorado in 2010
@@ -308,8 +308,8 @@ bars_2021 = ax2.barh(avgDF_2021_sorted.home, avgDF_2021_sorted.totalRuns,
                      color=colorado_colors_2021)
 #ax2.set_title("2021 Season: Average Runs Per Game by Stadium", 
  #             fontsize=14, fontweight='bold', pad=15)
-ax2.set_xlabel("Average Runs Per Game", fontsize=12)
-ax2.set_ylabel("Stadium (Home Team)", fontsize=12)
+ax2.set_xlabel("Average Runs Per Game", fontsize=8)
+ax2.set_ylabel("Stadium (Home Team)", fontsize=8)
 ax2.grid(True, alpha=0.3)
 
 # Add annotation for Colorado in 2021
@@ -320,17 +320,17 @@ ax2.annotate(f"COL: {colorado_2021_runs:.2f}",
             xy=(colorado_2021_runs, colorado_2021_index + up_offset), 
             xytext=(colorado_2021_runs + 0.3, colorado_2021_index + up_offset),
             arrowprops=dict(arrowstyle='->', color='darkorchid', lw=2),
-            fontsize=10, fontweight='bold', color='darkorchid')
+            fontsize=8, fontweight='bold', color='darkorchid')
 
 # Add overall title and legend
 fig.suptitle("Colorado's Run-Friendly Advantage: 2010 vs 2021 Comparison", 
-             fontsize=16, fontweight='bold', y=0.98)
+             fontsize=8, fontweight='bold', y=0.98)
 
 # Create legend
 colorado_bar = plt.Rectangle((0,0),1,1, color="darkorchid", label="Colorado Rockies")
 other_bar = plt.Rectangle((0,0),1,1, color="lightgrey", label="Other Stadiums")
 fig.legend(handles=[colorado_bar, other_bar], loc='lower center', 
-           bbox_to_anchor=(0.5, -0.05), frameon=True, ncol=2, fontsize=12)
+           bbox_to_anchor=(0.5, -0.05), frameon=True, ncol=2, fontsize=8)
 
 plt.tight_layout()
 plt.show()
