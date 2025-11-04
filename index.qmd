@@ -272,7 +272,7 @@ comparison_data = pd.merge(
 )
 
 # Create a two-facet visualization using subplot layout
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5), layout='constrained')
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9, 5), layout='constrained')
 
 # Sort data for better visualization
 avgDF_2010_sorted = avgDF_2010.sort_values('totalRuns', ascending=True)
@@ -299,9 +299,9 @@ colorado_2010_index = avgDF_2010_sorted[avgDF_2010_sorted.home == "COL"].index[0
 colorado_2010_runs = avgDF_2010_sorted[avgDF_2010_sorted.home == "COL"]["totalRuns"].iloc[0]
 ax1.annotate(f"COL: {colorado_2010_runs:.2f}", 
             xy=(colorado_2010_runs, colorado_2010_index + up_offset), 
-            xytext=(colorado_2010_runs + 0.3, colorado_2010_index + up_offset),
+            xytext=(colorado_2010_runs + 1.5, colorado_2010_index + up_offset),
             arrowprops=dict(arrowstyle='->', color='darkorchid', lw=2),
-            fontsize=10, fontweight='bold', color='darkorchid')
+            fontsize=6, fontweight='bold', color='darkorchid')
 
 # Right subplot: 2021 data
 bars_2021 = ax2.barh(avgDF_2021_sorted.home, avgDF_2021_sorted.totalRuns, 
@@ -318,13 +318,13 @@ colorado_2021_index = avgDF_2021_sorted[avgDF_2021_sorted.home == "COL"].index[0
 colorado_2021_runs = avgDF_2021_sorted[avgDF_2021_sorted.home == "COL"]["totalRuns"].iloc[0]
 ax2.annotate(f"COL: {colorado_2021_runs:.2f}", 
             xy=(colorado_2021_runs, colorado_2021_index + up_offset), 
-            xytext=(colorado_2021_runs + 0.3, colorado_2021_index + up_offset),
+            xytext=(colorado_2021_runs + 1.5, colorado_2021_index + up_offset),
             arrowprops=dict(arrowstyle='->', color='darkorchid', lw=2),
-            fontsize=8, fontweight='bold', color='darkorchid')
+            fontsize=6, fontweight='bold', color='darkorchid')
 
 # Add overall title and legend
 fig.suptitle("Colorado's Run-Friendly Advantage: 2010 vs 2021 Comparison", 
-             fontsize=8, fontweight='bold', y=0.98)
+             fontsize=10, fontweight='bold', y=0.98)
 
 # Create legend
 colorado_bar = plt.Rectangle((0,0),1,1, color="darkorchid", label="Colorado Rockies")
