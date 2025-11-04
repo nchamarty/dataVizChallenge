@@ -257,8 +257,9 @@ Let's create a comprehensive comparison between 2010 and 2021:
 #| echo: false
 #| out-width: 100%
 #| fig-align: center
-#| fig-width: 6
-#| fig-height: 4
+#| fig-width: 10
+#| fig-height: 5
+#| dpi: 100
 
 # Advanced Object-Oriented Techniques
 # Create a comprehensive comparison visualization
@@ -271,7 +272,7 @@ comparison_data = pd.merge(
 )
 
 # Create a two-facet visualization using subplot layout
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6), layout='constrained')
 
 # Sort data for better visualization
 avgDF_2010_sorted = avgDF_2010.sort_values('totalRuns', ascending=True)
