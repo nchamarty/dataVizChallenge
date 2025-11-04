@@ -74,23 +74,6 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Multiple Metrics:</strong> We can analyze both total runs and home runs</li>
 <li><strong>Visualization Practice:</strong> Perfect for demonstrating all four stages of visualization</li>
 </ul>
-<div id="load-data" class="cell" data-message="false" data-execution_count="1">
-<div class="cell-output cell-output-stdout">
-<pre><code>2010 data shape: (2430, 7)
-2021 data shape: (2429, 7)
-
-2010 data columns: ['date', 'visiting', 'home', 'visScore', 'homeScore', 'visHR', 'homeHR']
-
-First few rows of 2010 data:
-       date visiting home  visScore  homeScore  visHR  homeHR
-0  20100404      NYA  BOS         7          9      2       1
-1  20100405      MIN  ANA         3          6      1       3
-2  20100405      CLE  CHA         0          6      0       2
-3  20100405      DET  KCA         8          4      0       1
-4  20100405      SEA  OAK         5          3      1       0</code></pre>
-</div>
-</div>
-<p><strong>Hypothesis Formation</strong> High altitude can significantly affect baseball performance because the air is thinner at higher altitudes. This has different imnpact on pitchers and hitters. For pitchers, less movement for the pitches and for hitters, the ball travels farther once it is hit. Mostly, this leads to higher scoring games. Coors Field is affected by high altitude because it is located at a high altitude in Denver, Colorado.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -101,7 +84,9 @@ First few rows of 2010 data:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Coors Field - Denver, CO : Is it the most run-friendly stadium? A 2021 vs 2020 comparative study:</strong> <strong>Question 1: Hypothesis Formation</strong> - Why might high altitude affect baseball performance? Is Coors Field affected by high altitude? Our purpose is to investigate whether Coors Field in Denver, Colorado is truly the most run-friendly baseball stadium in Major League Baseball.</p>
+<p><strong>Coors Field - Denver, CO : Is it the most run-friendly stadium? A 2021 vs 2020 comparative study:</strong> Our purpose is to investigate whether Coors Field in Denver, Colorado is truly the most run-friendly baseball stadium in Major League Baseball.</p>
+<p><strong>Question 1: Hypothesis Formation</strong> - Why might high altitude affect baseball performance? Is Coors Field affected by high altitude?</p>
+<p>High altitude can significantly affect baseball performance because the air is thinner at higher altitudes. This has different imnpact on pitchers and hitters. For pitchers, less movement for the pitches and for hitters, the ball travels farther once it is hit. Mostly, this leads to higher scoring games. Yes,Coors Field is affected by high altitude because it is located at a high altitude in Denver, Colorado.</p>
 </div>
 </div>
 </section>
@@ -138,8 +123,7 @@ First few rows of 2010 data:
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Question 1: Data Aggregation Strategy</strong> - How many games are in the dataset? Why do we aggregate individual games into stadium averages before we start the visualization process?</p>
-<p>There are 2430 games in the 2010 dataset ; and 2429 games in the 2021 dataset.</p>
-<p>Aggregating the total runs and home runs and then taking the average per game for each stadium will help us compare the total runs and home runs across all stadiums. Since it is difficult to do this comparison by looking at total runs and home runs across the stadiums from each individual game. This will also help us see which stadium is the most run-friendly.</p>
+<p>There are 2430 games in the 2010 dataset ; and 2429 games in the 2021 dataset. Aggregating the total runs and home runs and then taking the average per game for each stadium will help us compare the total runs and home runs across all stadiums. Since it is difficult to do this comparison by looking at total runs and home runs across the stadiums from each individual game. This will also help us see which stadium is the most run-friendly.</p>
 </div>
 </div>
 </section>
@@ -165,14 +149,18 @@ First few rows of 2010 data:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Question 1: Geometry Choices</strong> - Why is a horizontal bar chart better than a scatter plot for this data? Average runs is a numerical data, and stadium is a categorical data. A horizontal bar chart is better than a scatter plot for this data because we can clearly see the average runs for each stadium as opposed to scatter plot where firstly, it is difficult to get an accurate value of the average runs for each stadium and secondly, visually compare the average runs across stadiums.</p>
+<p><strong>Question 1: Geometry Choices</strong> - Why is a horizontal bar chart better than a scatter plot for this data?</p>
+<p>Average runs is a numerical data, and stadium is a categorical data. A horizontal bar chart is better than a scatter plot for this data because we can clearly see the average runs for each stadium as opposed to scatter plot where firstly, it is difficult to get an accurate value of the average runs for each stadium and secondly, visually compare the average runs across stadiums.</p>
 <ul>
-<li>When would you choose a vertical bar chart over horizontal? We can chose vertical bar chart when the number of categories is &lt; 12 for better readability. Also, in cases where we want to display time-series or ordinal data, vertical bar charts give a better visual read than horizontal bar charts.</li>
+<li>When would you choose a vertical bar chart over horizontal?</li>
 </ul>
-<p><strong>Question 2: Aesthetic Mappings</strong> - What does the color highlighting accomplish in Approach 4? Color highlighting in approach 4 helps business users / analysts to quickly draw a conclusion that the stadium COL has seen highest average runs scored per game in the year 2010.</p>
+<p>We can chose vertical bar chart when the number of categories is &lt; 12 for better readability. Also, in cases where we want to display time-series or ordinal data, vertical bar charts give a better visual read than horizontal bar charts.</p>
+<p><strong>Question 2: Aesthetic Mappings</strong> - What does the color highlighting accomplish in Approach 4?</p>
+<p>Color highlighting in approach 4 helps business users / analysts to quickly draw a conclusion that the stadium COL has seen highest average runs scored per game in the year 2010.</p>
 <ul>
-<li>How does position (x/y) compare to color for encoding data? Position can handle ordinal data, while color cannot. Position has capacity to accommodate infinte cardinality while color is good only for 12 or less cardinal values. position is best for most important data, while color (discrete) is best for categorical data with small number of values. So in this case, position plotting tells us the story in a better way.</li>
+<li>How does position (x/y) compare to color for encoding data?</li>
 </ul>
+<p>Position can handle ordinal data, while color cannot. Position has capacity to accommodate infinte cardinality while color is good only for 12 or less cardinal values. position is best for most important data, while color (discrete) is best for categorical data with small number of values. So in this case, position plotting tells us the story in a better way.</p>
 </div>
 </div>
 </section>
@@ -205,18 +193,29 @@ Colorado is 20.8% above league average</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Question 1: Professional Formatting</strong> - What elements make this visualization suitable for a business presentation? Answer: 1. The <strong>Title</strong> is very helpful for business to come to a conclusion on which standium is the most run-freindly ballpark in 2010, which is one of the most important business questions we had. 2. All the <strong>stadiums are listed in y-axis</strong> and the avg runs per game against it in a bar format. This makes it easy to read and compare runs scoring between different stadiums. 3. <strong>color coding</strong> of the best run scoring stadium which is helpful to distinguish COL from all other stadiums, even the other high scoring ones. 4. the <strong>legend</strong> which labels the color coding - Colorado Rockies vs Others 5. The <strong>ticks on x-axis</strong> are scaled appropriately, which makes it easier to derive avg runs scored against a stadium. - Is the annotation on the visualization helpful? Can you fix its placement? Answer: In the current visualization No, since it not pointing correctly to the bar corresponding to Colorado stadium. Yes, we can fix the placement. We updated the above code by adding up_offset = 20 to xy and xytext, and it fixed the issue.</p>
+<p><strong>Question 1: Professional Formatting</strong> - What elements make this visualization suitable for a business presentation?</p>
+<ol type="1">
+<li><p>The <strong>Title</strong> is very helpful for business to come to a conclusion on which standium is the most run-freindly ballpark in 2010, which is one of the most important business questions we had.</p></li>
+<li><p>All the <strong>stadiums are listed in y-axis</strong> and the avg runs per game against it in a bar format. This makes it easy to read and compare runs scoring between different stadiums.</p></li>
+<li><p><strong>color coding</strong> of the best run scoring stadium which is helpful to distinguish COL from all other stadiums, even the other high scoring ones.</p></li>
+<li><p>the <strong>legend</strong> which labels the color coding - Colorado Rockies vs Others</p></li>
+<li><p>The <strong>ticks on x-axis</strong> are scaled appropriately, which makes it easier to derive avg runs scored against a stadium.</p></li>
+</ol>
+<ul>
+<li>Is the annotation on the visualization helpful? Can you fix its placement?</li>
+</ul>
+<p>In the current visualization No, since it not pointing correctly to the bar corresponding to Colorado stadium. Yes, we can fix the placement. We updated the above code by adding up_offset = 20 to xy and xytext, and it fixed the issue.</p>
 </div>
 </div>
 </section>
 <section id="advanced-object-oriented-techniques" class="level2">
 <h2 class="anchored" data-anchor-id="advanced-object-oriented-techniques">Advanced Object-Oriented Techniques</h2>
 <p>Let’s create a comprehensive comparison between 2010 and 2021:</p>
-<div id="cell-advanced-oo-techniques" class="cell" data-execution_count="5">
+<div id="cell-advanced-oo-techniques" class="cell" data-fig-height="4" data-fig-width="6" data-execution_count="5">
 <div class="cell-output cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/advanced-oo-techniques-output-1.png" id="advanced-oo-techniques" width="1523" height="802" class="figure-img"></p>
+<p><img src="index_files/figure-html/advanced-oo-techniques-output-1.png" id="advanced-oo-techniques" class="quarto-figure quarto-figure-center anchored figure-img" width="1523" height="802"></p>
 </figure>
 </div>
 </div>
@@ -242,7 +241,11 @@ Colorado advantage 2021: 17.6%</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Question 1: Using Subplot Layout</strong> - Create a two-facet visualization that shows the total runs for 2010 and 2021 for each stadium in a single figure. Highlight Colorado in the visualization.</p>
+<p><strong>Question 1: Using Subplot Layout</strong></p>
+<ul>
+<li>Create a two-facet visualization that shows the total runs for 2010 and 2021 for each stadium in a single figure. Highlight Colorado in the visualization.</li>
+</ul>
+<p>As shown above.</p>
 <p><strong>Question 2: Explanation of the Visualization</strong></p>
 <p>This subplot visualization demonstrates Colorado’s slip from its dominance as the most run-friendly ballpark between the years 2010 and 2021 selected for comparison of performance of the parks. The side-by-side comparison reveals several key insights: First, Colorado was the highest-scoring stadium in the year 2010 with 10.59 runs/game, but slipped to 3rd place as of 2021 despite showing a slight increase in runs/game to 10.65, as shown using purple highlighting and annotations in the subplots. The horizontal bar chart format allows for easy comparison of all stadiums while maintaining readability of team abbreviations. The visualization answers the core business question by showing that Colorado was the top run-friendly stadium in the past (as per 2010 data) but not anymore (as per 2021 data). It is succeeded by Baltimore Orioles (BAL) and Boston Red Sox (BOS), which are the new top run-friendly stadiums as of 2021.</p>
 <ul>

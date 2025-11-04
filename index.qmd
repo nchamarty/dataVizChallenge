@@ -33,23 +33,24 @@ df2010 = pd.read_csv("baseball10.csv")
 # Load 2021 baseball season data for comparison
 df2021 = pd.read_csv("baseball21.csv")
 
-print("2010 data shape:", df2010.shape)
-print("2021 data shape:", df2021.shape)
-print("\n2010 data columns:", df2010.columns.tolist())
-print("\nFirst few rows of 2010 data:")
-print(df2010.head())
+#print("2010 data shape:", df2010.shape)
+#print("2021 data shape:", df2021.shape)
+#print("\n2010 data columns:", df2010.columns.tolist())
+#print("\nFirst few rows of 2010 data:")
+#print(df2010.head())
 ```
-
-**Hypothesis Formation**
-High altitude can significantly affect baseball performance because the air is thinner at higher altitudes. This has different imnpact on pitchers and hitters. For pitchers, less movement for the pitches and for hitters, the ball travels farther once it is hit. Mostly, this leads to higher scoring games. 
-Coors Field is affected by high altitude because it is located at a high altitude in Denver, Colorado.
 
 ::: {.callout-important}
 ## 🤔 Discussion Questions: Stage 1 - Declaration of Purpose
+
 **Coors Field - Denver, CO : Is it the most run-friendly stadium? A 2021 vs 2020 comparative study:** 
+Our purpose is to investigate whether Coors Field in Denver, Colorado is truly the most run-friendly baseball stadium in Major League Baseball.
+
 **Question 1: Hypothesis Formation**
 - Why might high altitude affect baseball performance?  Is Coors Field affected by high altitude?
-Our purpose is to investigate whether Coors Field in Denver, Colorado is truly the most run-friendly baseball stadium in Major League Baseball.
+
+High altitude can significantly affect baseball performance because the air is thinner at higher altitudes. This has different imnpact on pitchers and hitters. For pitchers, less movement for the pitches and for hitters, the ball travels farther once it is hit. Mostly, this leads to higher scoring games. 
+Yes,Coors Field is affected by high altitude because it is located at a high altitude in Denver, Colorado.
 ::: 
 
 ## Stage 2: Curation of Content
@@ -94,10 +95,8 @@ print(avgDF_2021.head())
 - How many games are in the dataset? Why do we aggregate individual games into stadium averages before we start the visualization process?
 
 There are 2430 games in the 2010 dataset ; and 2429 games in the 2021 dataset. 
-
 Aggregating the total runs and home runs and then taking the average per game for each stadium will help us compare the total runs and home runs across all stadiums. Since it is difficult to do this comparison by looking at total runs and home runs across the stadiums from each individual game. This will also help us see which stadium is the most run-friendly.
 :::
-
 
 ## Stage 3: Structuring of Visual Mappings
 
@@ -152,18 +151,21 @@ plt.show()
 
 **Question 1: Geometry Choices**
 - Why is a horizontal bar chart better than a scatter plot for this data?
+
 Average runs is a numerical data, and stadium is a categorical data. A horizontal bar chart is better than a scatter plot for this data because we can clearly see the average runs for each stadium as opposed to scatter plot where firstly, it is difficult to get an accurate value of the average runs for each stadium and secondly, visually compare the average runs across stadiums.
 
 - When would you choose a vertical bar chart over horizontal?
+
 We can chose vertical bar chart when the number of categories is < 12 for better readability. Also, in cases where we want to display time-series or ordinal data, vertical bar charts give a better visual read than horizontal bar charts.
 
 **Question 2: Aesthetic Mappings**
 - What does the color highlighting accomplish in Approach 4?
+
 Color highlighting in approach 4 helps business users / analysts to quickly draw a conclusion that the stadium COL has seen highest average runs scored per game in the year 2010.
 
 - How does position (x/y) compare to color for encoding data?
-Position can handle ordinal data, while color cannot. Position has capacity to accommodate infinte cardinality while color is good only for 12 or less cardinal values. position is best for most important data, while color (discrete) is best for categorical data with small number of values. So in this case, position plotting tells us the story in a better way.
 
+Position can handle ordinal data, while color cannot. Position has capacity to accommodate infinte cardinality while color is good only for 12 or less cardinal values. position is best for most important data, while color (discrete) is best for categorical data with small number of values. So in this case, position plotting tells us the story in a better way.
 :::
 
 ## Stage 4: Formatting for Your Audience
@@ -231,14 +233,20 @@ print(f"Colorado is {((colorado_runs / avgDF_2010_sorted.totalRuns.mean()) - 1) 
 
 **Question 1: Professional Formatting**
 - What elements make this visualization suitable for a business presentation?
-Answer:
+
   1. The **Title** is very helpful for business to come to a conclusion on which standium is the most run-freindly ballpark in 2010, which is one of the most important business questions we had.
+
   2. All the **stadiums are listed in y-axis** and the avg runs per game against it in a bar format. This makes it easy to read and compare runs scoring between different stadiums.
+
   3. **color coding** of the best run scoring stadium which is helpful to distinguish COL from all other stadiums, even the other high scoring ones.
+
   4. the **legend** which labels the color coding - Colorado Rockies vs Others
+
   5. The **ticks on x-axis** are scaled appropriately, which makes it easier to derive avg runs scored against a stadium.
+
 - Is the annotation on the visualization helpful?  Can you fix its placement?
-Answer: In the current visualization No, since it not pointing correctly to the bar corresponding to Colorado stadium. Yes, we can fix the placement. We updated the above code by adding up_offset = 20 to xy and xytext, and it fixed the issue.
+
+In the current visualization No, since it not pointing correctly to the bar corresponding to Colorado stadium. Yes, we can fix the placement. We updated the above code by adding up_offset = 20 to xy and xytext, and it fixed the issue.
 :::
 
 ## Advanced Object-Oriented Techniques
@@ -247,6 +255,10 @@ Let's create a comprehensive comparison between 2010 and 2021:
 ```{python}
 #| label: advanced-oo-techniques
 #| echo: false
+#| out-width: 100%
+#| fig-align: center
+#| fig-width: 6
+#| fig-height: 4
 
 # Advanced Object-Oriented Techniques
 # Create a comprehensive comparison visualization
@@ -338,7 +350,10 @@ print(f"Colorado advantage 2021: {((colorado_2021_runs / avgDF_2021_sorted.total
 ## 🤔 Discussion Questions: Advanced Object-Oriented Techniques
 
 **Question 1: Using Subplot Layout**
+
 - Create a two-facet visualization that shows the total runs for 2010 and 2021 for each stadium in a single figure.  Highlight Colorado in the visualization.
+
+As shown above.
 
 **Question 2: Explanation of the Visualization**
 
