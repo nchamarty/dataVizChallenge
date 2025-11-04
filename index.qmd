@@ -353,7 +353,7 @@ print(f"Colorado advantage 2021: {((colorado_2021_runs / avgDF_2021_sorted.total
 
 - Create a two-facet visualization that shows the total runs for 2010 and 2021 for each stadium in a single figure.  Highlight Colorado in the visualization.
 
-As shown above.
+The visualization is shown above.
 
 **Question 2: Explanation of the Visualization**
 
