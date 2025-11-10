@@ -272,7 +272,7 @@ comparison_data = pd.merge(
 )
 
 # Create a two-facet visualization using subplot layout
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9, 5), layout='constrained')
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 5), layout='constrained')
 
 # Sort data for better visualization
 avgDF_2010_sorted = avgDF_2010.sort_values('totalRuns', ascending=True)
@@ -324,7 +324,7 @@ ax2.annotate(f"COL: {colorado_2021_runs:.2f}",
 
 # Add overall title and legend
 fig.suptitle("Colorado's Run-Friendly Advantage: 2010 vs 2021 Comparison", 
-             fontsize=10, fontweight='bold', y=0.98)
+             fontsize=10, fontweight='bold', y=1.05)
 
 # Create legend
 colorado_bar = plt.Rectangle((0,0),1,1, color="darkorchid", label="Colorado Rockies")
@@ -332,7 +332,7 @@ other_bar = plt.Rectangle((0,0),1,1, color="lightgrey", label="Other Stadiums")
 fig.legend(handles=[colorado_bar, other_bar], loc='lower center', 
            bbox_to_anchor=(0.5, -0.05), frameon=True, ncol=2, fontsize=8)
 
-plt.tight_layout()
+#plt.tight_layout()
 plt.show()
 
 # Print comparison statistics
